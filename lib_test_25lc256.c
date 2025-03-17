@@ -39,11 +39,12 @@ void Initialiser(void){
 
 #if CURRENT_TEST == TEST_WREN_WRDIS || CURRENT_TEST == TEST_READ_SR
 void mainTask(void){
-    uint8_t sr;
+    
     __delay_ms(2000);
     eeprom25LC256_WriteEnable(&dev_eeprom);
     LED = 1;
     #if CURRENT_TEST == TEST_READ_SR
+    uint8_t sr;
     __delay_ms(2000);
     eeprom25LC256_ReadSR(&dev_eeprom, &sr);    
     #endif
