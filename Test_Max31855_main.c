@@ -1,13 +1,13 @@
 /**
- * @file    test_eeprom_25lc256_main.c
+ * @file    Test_Max31855_main.c
  * @author 	Alexis ROLLAND
  * @date	2024-04
- * @brief 	Test App for lib_25lc256
- *          Depends on lib_spi_pic24_ll (V2)
+ * @brief 	Test App for MAX31855 SPI Thermocouple amplifier
+ *  
  *
  */
 
-#include "lib_test_25lc256.h"   // Inclusion du fichier .h "Applicatif" renommé
+#include "lib_test_max31855.h"   // Inclusion du fichier .h "Applicatif" renommé
 
 /**
  * Insérer Ici les bits de configuration pour le MCU 						  
@@ -31,25 +31,25 @@
 #pragma config GCP = OFF            // General Code Segment Code Protect (ON, OFF)
 #pragma config JTAGEN = OFF         // JTAG Port Enable (ON, OFF)
 //----------------------------------------------------------------------------
-
 /* Directives de compilation - Macros		*/
 
-
-
 /* Déclarations des variables globales 	*/
-
-
-
+extern  max31855_desc_t MyMax31855;
+max31855_data_t Data;
 
 /* Programme Principal			*/
 int main(void)
 {
 // Variables locales au main
+
 Initialiser();		// Appel fonction d'initialisation
 
 while(1)
     {
-    mainTask();
+    __delay_ms(100);
+    max31855_read_data(&MyMax31855,&Data);
+    LATAbits.LATA0 = ~LATAbits.LATA0;
     }
-}					
+}	
+
 
