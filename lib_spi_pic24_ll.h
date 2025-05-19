@@ -120,7 +120,7 @@ typedef enum    {   SPI_OK,                 /**< Succes value                   
                     SPI_UNKNOWN_MODULE      /**< The SPI Module ID is unknown           */
 } spi_err_t; 
                     
-/** 
+/**  
  * Type spi_config_t
  */
 typedef struct{

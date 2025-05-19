@@ -39,7 +39,7 @@ eeprom25lc256_err_t eeprom25LC256_Init(const eeprom25lc256_config_t *pCfg, eepro
         }
     
     pdev->pSpi = pCfg->pSpi;
-    
+   
     eepromCS = pCfg->eepromCS;
     pdev->pEepromCS = &eepromCS;
     
