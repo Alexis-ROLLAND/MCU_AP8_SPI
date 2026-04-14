@@ -38,14 +38,12 @@ extern  max31855_desc_t MyMax31855;
 max31855_data_t Data;
 
 /* Programme Principal			*/
-int main(void)
-{
+int main(void){
 // Variables locales au main
 
 Initialiser();		// Appel fonction d'initialisation
 
-while(1)
-    {
+while(1)    {
     __delay_ms(100);
     max31855_read_data(&MyMax31855,&Data);
     LATAbits.LATA0 = ~LATAbits.LATA0;

@@ -18,8 +18,7 @@ max31855_desc_t MyMax31855;
 spi_desc_t      SpiModule;
 
 /*	Implémentation du code */
-void Initialiser(void)
-{
+void Initialiser(void){
     max31855_config_t   maxCfg;
 
     // Leds
