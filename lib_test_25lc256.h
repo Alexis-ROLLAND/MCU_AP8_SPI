@@ -20,7 +20,7 @@
 #define     TEST_READ_SR        2
 #define     TEST_WRITE_AND_READ 3
 
-#define     CURRENT_TEST    TEST_WREN_WRDIS
+#define     CURRENT_TEST    TEST_WRITE_AND_READ
 
 
 
