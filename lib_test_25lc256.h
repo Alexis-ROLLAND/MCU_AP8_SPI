@@ -16,17 +16,21 @@
 #include <libpic30.h>
 #include <xc.h>
 
+#include "lib_25lc256.h"
+
 #define     TEST_WREN_WRDIS     1
 #define     TEST_READ_SR        2
 #define     TEST_WRITE_AND_READ 3
 
-#define     CURRENT_TEST    TEST_WRITE_AND_READ
+#define     CURRENT_TEST    TEST_READ_SR
 
 
 
 #define LED         LATAbits.LATA0
 #define TRIS_LED    TRISAbits.TRISA0
-#define ErrorHandler()  {LED = ~LED;__delay_ms(25);}
+#define ErrorHandler()  {while(1){LED = ~LED;__delay_ms(25);};}
+
+#define MASK_WEL    0x02    /**< Bit WEL is bit 1 of the SR byte  */
 
 /**
  * @brief Global init function/task 
@@ -48,24 +52,7 @@ void Initialiser(void);
  */
 void mainTask(void);
  
- /**
- * @brief  
- * 
- * @param	
- * 
- * @return   
- *
- */
-
-
- /**
- * @brief  
- * 
- * @param	
- * 
- * @return   
- *
- */
+ 
  
  
 

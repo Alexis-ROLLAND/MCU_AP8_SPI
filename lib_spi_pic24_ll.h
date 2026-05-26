@@ -193,8 +193,7 @@ spi_err_t   spi_deassertCS(const  spi_desc_t *pSpi, const spi_cs_t *pCs);
   * @brief      Initiates a SPI transfer based using the Spi module descriptor  
   *             Data format is 8 bits
   * @param[in]  pSpi    Address of the initialized Spi module descriptor
-  * @param[in]  pCs  Address of the Cs structure for the Chip Select
-  * @param      TxData  Byte to Tx
+  *     @param      TxData  Byte to Tx
   * @param[out] pRxData Address of the location to store the Rx data or NULL   	
   * 
   * @return     SPI_OK 
